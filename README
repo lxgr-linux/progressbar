@@ -1,3 +1,15 @@
 # Usage
 
-This is an demo, the relevant code s the long line with the additional variables.
+This is a python module that can be used to add an pacman like progressbar to a python script.
+
+It can be used by importing 'progressbar'
+and calling 'progressbar.progress(i, max, "String")'
+i is the step the progressbar should be at
+max is the max number of steps, maximum is '999'
+"String" is the text, that's displayed before the progressbar.
+
+Look at demo.py to lern more.
+
+# Installation
+
+Copy the progressbar.py file to /usr/lib/python3.8/
