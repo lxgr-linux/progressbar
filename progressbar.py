@@ -27,5 +27,6 @@ def dload(current, max, string, current_old, time_old):
     width, height = os.get_terminal_size()
     pl=round(math.log(width/57 ,1.01644658))
     string=' '+string+200*' '
-    print('\r'+string[:width-21-len(format_bytes(speed))-len(format_bytes(current))-pl]+format_bytes(current)+'iB '+format_bytes(speed)+'iB/s 00:00 ['+round((current/max)*pl)*'#'+(pl-round((current/max)*pl))*'-'+'] '+(3-len(str(round((current/max)*100))))*' '+str(round((current/max)*100))+'%', end='', flush=True)
+    m, s = divmod(round((max-current)/speed), 60)
+    print('\r'+string[:width-28-len(format_bytes(current))-pl]+format_bytes(current)+'iB'+(8-len(format_bytes(speed)))*' '+format_bytes(speed)+'iB/s '+(2-len(str(m)))*'0'+str(m)+':'+(2-len(str(s)))*'0'+str(s)+' ['+round((current/max)*pl)*'#'+(pl-round((current/max)*pl))*'-'+'] '+(3-len(str(round((current/max)*100))))*' '+str(round((current/max)*100))+'%', end='', flush=True)
     return current, time_now
