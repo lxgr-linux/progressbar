@@ -9,7 +9,7 @@ def bar(current, total, length):
     global time_old
     global n
     n=n+1
-    if n == 600:
+    if n == 200:
         current_old, time_old = progressbar.dload(current, total, "test", current_old, time_old)
         n=0
 
